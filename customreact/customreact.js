@@ -1,0 +1,1 @@
+const mainConatiner = document.getElementById('root');
