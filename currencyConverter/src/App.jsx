@@ -18,84 +18,73 @@ function App() {
   const swap = ()=> {
     setFrom(to)
     setTo(from)
-    setConvertedAmount(amount)
-    setAmount(convertedAmount)
+   
   }
 
-  const convert = ()=>{setConvertedAmount(amount * currencyInfo[to]);}
+  const convert = ()=>{
+     if (!currencyInfo[to]) return;
+    setConvertedAmount(amount * currencyInfo[to]);}
 
   return (
     <>
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center"
+      style={{backgroundImage:`url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5YSOO5QX2y-R9DGDbXyMNLLKlt5shlt123_2xjbCrFb_AEmZQ3T_1_BK1&s=10')`}}>
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6">
+        
+        <form onSubmit={(e)=>{e.preventDefault();
+        convert();
 
-        {/* From */}
+        }}>
+        
         <div className="bg-gray-100 rounded-xl p-4 flex justify-between items-center mb-4">
           <div>
-            <label className="block text-sm text-gray-500 mb-2">
-              From
-            </label>
+            
 
-            <input
-              type="number"
-              placeholder="0"
-              className="bg-transparent outline-none text-xl w-full"
+            <InputBox
+              label="From"
+              amount={amount}
+              currencyOptions={options}
+              selectCurrency={from}
+              onAmountChange={(amount) => setAmount(amount)}
+              onCurrencyChange={(currency) => setFrom(currency)}
             />
           </div>
 
-          <div>
-            <label className="block text-sm text-gray-500 mb-2">
-              Currency
-            </label>
-
-            <select className="bg-white border rounded-lg px-3 py-2 outline-none">
-              <option>USD</option>
-              <option>INR</option>
-              <option>EUR</option>
-              <option>GBP</option>
-            </select>
-          </div>
+        
         </div>
 
-        {/* Swap Button */}
+     
         <div className="flex justify-center -my-2 relative z-10">
-          <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+          <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
+          type="button"
+          onClick={swap}>
             Swap
           </button>
         </div>
 
-        {/* To */}
+  
         <div className="bg-gray-100 rounded-xl p-4 flex justify-between items-center mt-4">
           <div>
-            <label className="block text-sm text-gray-500 mb-2">
-              To
-            </label>
+            
 
-            <input
-              type="number"
-              placeholder="0"
-              className="bg-transparent outline-none text-xl w-full"
+            <InputBox
+              label="To"
+              amount={convertedAmount}
+              currencyOptions={options}
+              selectCurrency={to}
+              amountDisable
+              onCurrencyChange={(currency) => setTo(currency)}
             />
           </div>
 
-          <div>
-            <label className="block text-sm text-gray-500 mb-2">
-              Currency
-            </label>
-
-            <select className="bg-white border rounded-lg px-3 py-2 outline-none">
-              <option>INR</option>
-              <option>USD</option>
-              <option>EUR</option>
-              <option>GBP</option>
-            </select>
-          </div>
+         
         </div>
 
-        {/* Convert Button */}
+        
         <button className="w-full mt-6 bg-blue-600 text-white py-3 rounded-xl text-lg font-semibold hover:bg-blue-700 transition">
-          Convert
+          Convert {from.toUpperCase()} to {to.toUpperCase()}
         </button>
+        </form>
       </div>
     </div>
     </>

@@ -8,16 +8,11 @@ function useCurrencyInfo(currency) {
      
 
       fetch(`https://open.er-api.com/v6/latest/${currency}`)
-        .then((response) => {
-          response.json();
-        })
+        .then((response) => response.json())
         .then((res) => {
           setData(res.rates);
         });
-    },
-    [currency],
-   
-  );
+    }, [currency]);
 
    console.log(data);
 
