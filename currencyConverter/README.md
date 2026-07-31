@@ -1,16 +1,131 @@
-# React + Vite
+#  Currency Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive Currency Converter built using **React.js**, **Tailwind CSS**, and a live **Currency Exchange API**. Convert any currency instantly with real-time exchange rates.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+##  Features
 
-## React Compiler
+-  Real-time currency conversion
+-  Supports multiple international currencies
+-  Swap currencies with one click
+-  Responsive design for all devices
+-  Fast and lightweight
+-  Clean and modern UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+##  Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js
+- Tailwind CSS
+- JavaScript 
+- Vite
+- Exchange Rate API
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+│── components/
+│   ├── InputBox.jsx
+│
+│── hooks/
+│   ├── useCurrencyInfo.js
+│
+│── App.jsx
+│── main.jsx
+```
+
+---
+
+
+
+##  Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/your-username/currency-converter.git
+```
+
+Navigate to the project
+
+```bash
+cd currency-converter
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+##  API Used
+
+This project uses a free Exchange Rate API to fetch live currency conversion rates.
+
+Example:
+
+```
+https://open.er-api.com/v6/latest/USD
+```
+
+---
+
+##  How It Works
+
+1. Enter the amount.
+2. Select the source currency.
+3. Select the destination currency.
+4. Click **Convert**.
+5. Instantly view the converted amount.
+
+---
+
+##  Learning Outcomes
+
+While building this project, I practiced:
+
+- React Hooks (`useState`, `useEffect`, `useCallback`)
+- Custom Hooks
+- API Fetching
+- Component Reusability
+- Props
+- State Management
+- Tailwind CSS
+- Responsive UI Design
+
+---
+
+##  Contributing
+
+Contributions are welcome!
+
+Feel free to fork this repository and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+##  Author
+
+**Rikesh Kumar**
+
+GitHub: https://github.com/Rikeshhsinha
+
+LinkedIn: https://www.linkedin.com/in/rikeshhsinha
