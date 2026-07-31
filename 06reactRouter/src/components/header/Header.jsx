@@ -8,14 +8,14 @@ function Header() {
          <header className="w-full bg-gray-900 shadow-md">
       <nav className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
 
-        {/* Left - Logo */}
+      
         <div>
           <Link to="/" className="text-3xl font-bold text-white">
             Git<span className="text-blue-500">Finder</span>
           </Link>
         </div>
 
-        {/* Center - Navigation */}
+      
         <div className="flex justify-center gap-8">
           <NavLink
             to="/"
@@ -62,7 +62,7 @@ function Header() {
           </NavLink>
         </div>
 
-        {/* Right - Buttons */}
+        
         <div className="flex justify-end gap-4">
           <button className="text-white hover:text-blue-400 transition">
             Login
