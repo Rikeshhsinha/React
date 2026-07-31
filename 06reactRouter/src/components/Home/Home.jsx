@@ -1,7 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
+  const searchUser = () => {
+  if (username.trim() === "") return;
+
+  navigate(`/github/${username}`);
+};
 
   return (
     <section className="min-h-screen bg-gray-100 flex items-center">
@@ -33,6 +41,7 @@ function Home() {
 
             <button
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 transition"
+              onClick={searchUser}
             >
               Search
             </button>
